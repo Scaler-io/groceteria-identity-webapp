@@ -12,7 +12,8 @@ module.exports = {
     },
     extend: {
       colors:{
-        primaryGreen: 'hsl(148, 56%, 46%)',
+        primaryGreen: 'hsl(164, 71%, 53%)',
+        deepGreen: 'hsl(162, 55%, 42%)',
         softRed: 'hsl(0, 94%, 66%)',
       },
       fontFamily: {
