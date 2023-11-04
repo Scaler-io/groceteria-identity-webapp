@@ -1,6 +1,6 @@
 <div class="p-3 pt-5 flex remaining-width items-center">
     <!-- Navbar toggler-->
-    <div  class="flex items-center md:ml-10 p-2 text-sm rounded-full text-gray-400 cursor-pointer">
+    <div matRipple class="flex items-center md:ml-10 p-2 text-sm rounded-full text-gray-400 cursor-pointer">
         <div class="material-symbols-outlined text-md">menu</div>
     </div>
 
@@ -12,13 +12,15 @@
     
     <!-- Navbar menus -->
     <div class="ml-auto flex space-x-8 items-center mr-5 mt-1">
-        <div class="flex items-center">
+        <!-- Menu 1: notification -->
+        <div class="flex items-center relative">
             <div class="material-symbols-outlined text-gray-400 text-2xl cursor-pointer">notifications</div>
+            <div class="absolute -top-2 -right-2 border- border-red-500 w-5 text-center bg-red-500 text-white rounded-full text-sm">5</div>
         </div>
+
+        <!-- Menu 2:profile -->
         <div class="flex items-center">
-            <div class="h-8 w-8 flex items-center justify-center rounded-full bg-primaryGreen text-white cursor-pointer">S</div>
-            <h3 class="ml-3">Admin</h3>
-            <div class="material-symbols-outlined cursor-pointer text-gray-400 ml-3">expand_more</div>
+           <groceteria-user-avatar></groceteria-user-avatar>
         </div>
     </div>
 </div>

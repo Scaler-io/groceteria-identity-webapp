@@ -1,0 +1,26 @@
+<div class="flex -mt-2">
+    <div class="h-8 w-8 flex items-center justify-center rounded-full bg-primaryGreen text-white cursor-pointer">S</div>
+    <h3 class="ml-3">Admin</h3>
+    <div class="material-symbols-outlined cursor-pointer text-gray-400 ml-3" 
+        [matMenuTriggerFor]="userActionMenu" 
+        #userMenuTrigger="matMenuTrigger"
+    >{{ userMenuTrigger.menuOpen ? 'expand_less' : 'expand_more' }}</div>
+
+    <!-- Dropdown -->
+    <mat-menu #userActionMenu="matMenu" class="mt-2">
+        <!-- menu item 1: profile -->
+        <button mat-menu-item>
+            <div class="flex items-center space-x-3">
+                <span class="material-symbols-outlined text-green-400">account_circle</span>
+                <span class="font-opensans">Profile</span>
+            </div>
+        </button>
+        <!-- menu item 2: logout -->
+        <button mat-menu-item>
+            <div class="flex items-center space-x-3">
+                <span class="material-symbols-outlined text-red-400">power_settings_new</span>
+                <span class="font-opensans">Logout</span>
+            </div>
+        </button>
+    </mat-menu>
+</div>

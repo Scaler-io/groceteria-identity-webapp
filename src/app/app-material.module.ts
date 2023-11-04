@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import {
   MAT_RIPPLE_GLOBAL_OPTIONS,
   MatRippleModule,
   RippleGlobalOptions,
 } from '@angular/material/core';
+import { MatMenuModule } from '@angular/material/menu';
 
 const globalRippleConfig: RippleGlobalOptions = {
   disabled: false,
@@ -14,7 +16,7 @@ const globalRippleConfig: RippleGlobalOptions = {
   },
 };
 
-const MaterialComponentModules = [MatRippleModule];
+const MaterialComponentModules = [MatRippleModule, MatMenuModule, MatButtonModule];
 
 @NgModule({
   declarations: [],
