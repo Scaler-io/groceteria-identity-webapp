@@ -1,6 +1,6 @@
 <div class="flex -mt-2">
-    <div class="h-8 w-8 flex items-center justify-center rounded-full bg-primaryGreen text-white cursor-pointer">{{ authUser.firstName | grcNameShorthand }}</div>
-    <h3 class="ml-3 mt-1">{{ authUser.firstName }}</h3>
+    <div class="h-8 w-8 flex items-center justify-center rounded-full bg-primaryGreen text-white cursor-pointer">{{ authUser?.firstName | grcNameShorthand }}</div>
+    <h3 class="ml-3 mt-1">{{ authUser?.firstName }}</h3>
     <div class="material-symbols-outlined cursor-pointer text-gray-400 ml-3 mt-1" 
         [matMenuTriggerFor]="userActionMenu" 
         #userMenuTrigger="matMenuTrigger"
