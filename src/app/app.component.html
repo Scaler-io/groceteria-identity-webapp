@@ -7,3 +7,11 @@
     </div>
   </div>
 </main>
+
+<div
+  class="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-screen bg-white z-10 opacity-100 visible transition-all delay-500 ease-out"
+  [class.overlay__hidden]="!isAppBusy && isAuthenticated"
+>
+  <mat-spinner diameter="40" color=""></mat-spinner>
+  <div class="text-md text-gray-500">Please wait</div>
+</div>

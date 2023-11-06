@@ -8,6 +8,11 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { SidenavModule } from './features/sidenav/sidenav.module';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
+import { appReducers } from './store/app.state';
+import { AuthModule } from 'angular-auth-oidc-client';
+import { environment } from 'src/environments/environment';
+import { AppMaterialModule } from './app-material.module';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,8 +22,13 @@ import { NavbarModule } from './shared/components/navbar/navbar.module';
     BrowserAnimationsModule,
     SidenavModule,
     NavbarModule,
-    StoreModule.forRoot({}, {}),
+    AppMaterialModule,
+    AuthModule.forRoot({
+      config: environment.config.oidcConfig
+    }),
+    StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],

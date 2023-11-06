@@ -1,16 +1,19 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { LogLevel } from 'angular-auth-oidc-client';
+import { IConfig } from './config';
 
 export const environment = {
-  production: false
+  production: false,
+  config: <IConfig>{
+    oidcConfig: {
+      authority: 'https://localhost:7001',
+      redirectUrl: window.location.origin,
+      postLogoutRedirectUri: window.location.origin,
+      clientId: 'bc916d46-3ff6-434d-8c88-5c16e5a7571a',
+      scope: 'openid profile roles email groceteria.identitymanager.api',
+      responseType: 'code',
+      silentRenew: true,
+      useRefreshToken: true,
+      logLevel: LogLevel.Error,
+    },
+  },
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
