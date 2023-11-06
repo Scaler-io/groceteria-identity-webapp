@@ -13,6 +13,7 @@ import { AuthModule } from 'angular-auth-oidc-client';
 import { environment } from 'src/environments/environment';
 import { AppMaterialModule } from './app-material.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppPageHeaderModule } from './shared/components/app-page-header/app-page-header.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     SidenavModule,
     NavbarModule,
     AppMaterialModule,
+    AppPageHeaderModule,
     AuthModule.forRoot({
       config: environment.config.oidcConfig
     }),
