@@ -1,3 +1,6 @@
+import { LogLevel } from "angular-auth-oidc-client";
+import { IConfig } from "./config";
+
 export const environment = {
   production: true,
   config: <IConfig>{
