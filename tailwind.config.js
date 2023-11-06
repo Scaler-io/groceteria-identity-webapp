@@ -11,6 +11,9 @@ module.exports = {
       xl: '1440px'
     },
     extend: {
+      backgroundImage: {
+        'gradientPrimary': 'linear-gradient(20deg,hsl(181deg 92% 42%) 0%,hsl(179deg 100% 41%) 9%,hsl(177deg 100% 43%) 19%,hsl(176deg 100% 44%) 29%,hsl(174deg 100% 46%) 41%,hsl(171deg 100% 47%) 55%,hsl(169deg 100% 49%) 73%,hsl(167deg 100% 50%) 100%)'
+      },
       colors:{
         primaryGreen: 'hsl(164, 71%, 53%)',
         deepGreen: 'hsl(162, 55%, 42%)',
