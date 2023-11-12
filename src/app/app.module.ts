@@ -14,11 +14,14 @@ import { environment } from 'src/environments/environment';
 import { AppMaterialModule } from './app-material.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppPageHeaderModule } from './shared/components/app-page-header/app-page-header.module';
+import { CoreModule } from './core/core.module';
+import { AppCountEffect } from './state/app-count/app-count.effect';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SidenavModule,
@@ -29,7 +32,7 @@ import { AppPageHeaderModule } from './shared/components/app-page-header/app-pag
       config: environment.config.oidcConfig
     }),
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppCountEffect]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],

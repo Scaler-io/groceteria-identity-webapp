@@ -11,7 +11,8 @@ export class AppPageHeaderComponent implements OnInit {
   public pageIcon: string;
 
   private pageIconMap = {
-    Dashboard: 'dashboard'
+    ['Dashboard']: 'dashboard',
+    ['Api clients']: 'devices'
   }
 
   constructor(private breadCrumb: BreadcrumbService) {}

@@ -16,6 +16,9 @@
   <div class="flex flex-col space-y-5">
     <!-- Menu items 1: Dashboard -->
     <div
+      routerLink="dashboard"
+      routerLinkActive="route-active"
+      [queryParamsHandling]="'merge'"
       class="flex space-x-5 justify-start items-center cursor-pointer px-5 pl-8 py-3 hover:bg-white rounded-l-[30px] text-white transition-all delay-75 ease-in-out hover:text-deepGreen"
     >
       <div class="material-symbols-outlined">dashboard</div>
@@ -24,11 +27,13 @@
 
     <!-- Menu items 2: Api Clients -->
     <div
-      class="flex space-x-5 justify-start items-center cursor-pointer px-5 pl-8 py-3 hover:bg-white rounded-l-[30px] text-white transition-all delay-75 ease-in-out hover:text-deepGreen"
+      routerLink="api-clients"
+      routerLinkActive="route-active"
+      class="relative flex space-x-5 justify-start items-center cursor-pointer px-5 pl-8 py-3 hover:bg-white rounded-l-[30px] text-white transition-all delay-75 ease-in-out hover:text-deepGreen"
     >
       <div class="material-symbols-outlined">devices</div>
       <h4 class="font-semibold text-md font-opensans">Api clients</h4>
-      <div class="text-xs font-semibold"></div>
+      <div class="text-xs font-semibold absolute right-5 top-4">{{ appCount.apiClientCount }}</div>
     </div>
 
     <!-- Menu items 2: Api Clients -->

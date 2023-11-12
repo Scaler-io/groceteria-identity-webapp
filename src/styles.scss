@@ -63,3 +63,40 @@ body {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
+
+table {
+  thead {
+    @apply bg-primaryGreen dark:bg-gray-800;
+    tr {
+      th {
+        @apply py-4 px-4 text-sm rtl:text-right text-white font-semibold dark:text-gray-400 text-center;
+      }
+    }
+  }
+  tbody {
+    @apply bg-white divide-y divide-gray-100 dark:divide-gray-700 dark:bg-gray-900;
+    td {
+      @apply px-4 py-4 text-sm text-center;
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+ @apply w-3;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-sm
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}

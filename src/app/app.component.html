@@ -1,10 +1,12 @@
 <main class="flex h-full max-h-full overflow-y-auto overflow-x-hidden">
-  <groceteria-sidenav></groceteria-sidenav>
-  <div class="overflow-y-auto overflow-x-hidden h-full">
+  <groceteria-sidenav [appCount]="appCounts"></groceteria-sidenav>
+  <div class="overflow-y-auto overflow-x-hidden h-full w-full">
     <groceteria-navbar></groceteria-navbar>
     <div class="w-full pl-10 py-10">
       <groceteria-app-page-header></groceteria-app-page-header>
-      <router-outlet></router-outlet>
+      <div class="pr-8">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </main>

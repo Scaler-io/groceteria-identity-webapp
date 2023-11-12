@@ -1,5 +1,5 @@
-import { LogLevel } from "angular-auth-oidc-client";
-import { IConfig } from "./config";
+import { LogLevel } from 'angular-auth-oidc-client';
+import { IConfig } from './config';
 
 export const environment = {
   production: true,
@@ -14,6 +14,10 @@ export const environment = {
       silentRenew: true,
       useRefreshToken: true,
       logLevel: LogLevel.Error,
+    },
+    identityApiConfig: {
+      identityManagerApiUrl: 'https://localhost:5010/identity',
+      subscriptionKey: '73595fa8955e4d13bca129f4f84b0a46',
     },
   },
 };

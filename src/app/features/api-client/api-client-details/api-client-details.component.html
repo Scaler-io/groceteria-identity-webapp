@@ -1,0 +1,103 @@
+<div class="container pl-8">
+    <div class="py-3 flex items-center justify-end">
+        <div class="flex gap-5">
+            <button matRipple class="material-symbols-outlined p-1 rounded-md text-cyan-600">edit_note</button>
+            <button matRipple class="material-symbols-outlined p-1 rounded-md text-softRed">Delete</button>
+        </div>
+    </div>
+    
+    <!-- overview -->
+    <groceteria-divider>Overview</groceteria-divider>
+    <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-1 py-10 gap-y-5 md:gap-0">
+        <div>
+            <label class="text-md text-deepGreen font-semibold">Client id</label>
+            <div class="text-sm text-slate-600">{{ apiClientDetails.clientId }}</div>
+          </div>
+          <div>
+            <label class="text-md text-deepGreen font-semibold">Client name</label>
+            <div class="text-sm text-slate-600">{{ apiClientDetails.clientName | camelCaseSpacer }}</div>
+          </div>
+          <div>
+            <label class="text-md text-deepGreen font-semibold">Client description</label>
+            <div class="text-sm text-slate-600">{{ apiClientDetails.clientDescription }}</div>
+          </div>
+    </div>
+
+    <!-- token details -->
+    <groceteria-divider>Token</groceteria-divider>
+    <div class="grid grid-cols-4 py-10">
+      <div>
+        <label class="text-md text-deepGreen font-semibold">Protocol</label>
+        <div class="text-sm text-slate-600">{{ apiClientDetails.protocolType }}</div>
+      </div>
+      <div>
+        <label class="text-md text-deepGreen font-semibold">Access token lifetime</label>
+        <div class="text-sm text-slate-600">{{ apiClientDetails.accessTokenLifetime }}</div>
+      </div>
+      <div>
+        <label class="text-md text-deepGreen font-semibold">Auth token lifetime</label>
+        <div class="text-sm text-slate-600">{{ apiClientDetails.authorizationCodeLifetime }}</div>
+      </div>
+      <div>
+        <label class="text-md text-deepGreen font-semibold">Identity token lifetime</label>
+        <div class="text-sm text-slate-600">{{ apiClientDetails.identityTokenLifetime }}</div>
+      </div>
+    </div>
+
+    <!-- configuration -->
+    <groceteria-divider>Configuration</groceteria-divider>
+    <div class="grid grid-cols-3 py-10 gap-4">
+      <div>
+        <label class="text-md text-deepGreen font-semibold">Grant types</label>
+        <div class="text-sm text-slate-600">
+          <groceteria-list-view [list]="apiClientDetails.allowedGrantTypes"></groceteria-list-view>
+        </div>
+      </div>
+      <div>
+        <label class="text-md text-deepGreen font-semibold">Redirect uris</label>
+        <div class="text-sm text-slate-600">
+          <groceteria-list-view [list]="apiClientDetails.redirectUris"></groceteria-list-view>
+        </div>
+      </div>
+      <div>
+        <label class="text-md text-deepGreen font-semibold">Post logout redirect uris</label>
+        <div class="text-sm text-slate-600">
+          <groceteria-list-view [list]="apiClientDetails.postLogoutRedirectUris"></groceteria-list-view>
+        </div>
+      </div>
+    </div>
+
+    <!-- scope -->
+    <groceteria-divider>Scope</groceteria-divider>
+    <div class="grid grid-cols-6 py-10">
+      <div class="col-span-4">
+        <div>
+          <label class="text-md text-deepGreen font-semibold">Allowed scopes</label>
+          <div class="text-sm text-slate-600">
+            <groceteria-list-view [list]="apiClientDetails.allowedScopes"></groceteria-list-view>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- secrets -->
+  <groceteria-divider>Secrets</groceteria-divider>
+  <div class="grid grid-cols-2 gap-4 py-10">
+    <div class="shadow-md px-5 py-5 rounded-md" *ngFor="let secret of apiClientDetails.clientSecrets; let i=index">
+      <div class="grid grid-cols-2 gap-5 text-sm">
+        <div>
+          <label class="text-primaryGreen font-semibold">Secret {{ i+1 }}</label>
+          <div>{{ secret.description }}</div>
+        </div>
+        <div>
+          <label class="text-primaryGreen font-semibold">Expiry</label>
+          <div>{{ secret.expiration }}</div>
+        </div>
+        <div class="col-span-2 flex flex-col">
+          <label class="text-primaryGreen font-semibold">Value</label>
+          <input class="w-10/12 p-2 border focus:outline-none rounded-md" type="text" value="{{ secret.value }}"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
