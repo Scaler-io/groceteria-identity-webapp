@@ -1,4 +1,4 @@
-<div class="overflow-x-auto overflow-y-hidden rounded-lg flex flex-col items-center justify-between min-h-[450px]">
+<div class="overflow-x-auto overflow-y-hidden rounded-lg flex flex-col items-center justify-between min-h-[400px]">
   <table *ngIf="isApiDataLoaded" cdk-table [dataSource]="apiClients" class="min-w-full divide-y shadow-sm border divide-gray-200 dark:divide-gray-700">
     <ng-container cdkColumnDef="clientName">
       <th cdk-header-cell *cdkHeaderCellDef>Client name</th>
@@ -32,7 +32,7 @@
     <ng-container cdkColumnDef="action">
       <th cdk-header-cell *cdkHeaderCellDef>Action</th>
       <td cdk-cell *cdkCellDef="let element">
-        <button matRipple class="material-symbols-outlined rounded-full text-slate-500">more_horiz</button>
+        <button matRipple class="material-symbols-outlined rounded-full text-slate-500" (click)="openClientDetails(element.clientId)">more_horiz</button>
       </td>
     </ng-container>
 

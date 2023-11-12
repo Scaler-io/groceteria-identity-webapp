@@ -25,3 +25,10 @@ export const getPaginationMetaData = createSelector(
     };
   }
 );
+
+export const getApiClientDetails = createSelector(
+  state,
+  (state: ApiClientState) => {
+    return state.client;
+  }
+);

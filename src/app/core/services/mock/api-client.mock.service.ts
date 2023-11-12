@@ -32,16 +32,7 @@ export class ApiClientMockService {
   public getApiClientDetails(clientId: string): Observable<ApiClient> {
     const temp = sampleApiClient;
     temp.clientId = clientId;
-
-    // Introduce a delay of 1000 milliseconds (1 second)
-    const delayInMillis = 1000;
-
-    return new Observable<ApiClient>((observer) => {
-      setTimeout(() => {
-        observer.next(temp);
-        observer.complete();
-      }, delayInMillis);
-    });
+    return of(temp);
   }
 }
 

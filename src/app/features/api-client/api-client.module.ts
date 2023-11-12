@@ -14,6 +14,7 @@ import { AppMaterialModule } from 'src/app/app-material.module';
 import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 import { PaginatorModule } from 'src/app/shared/components/paginator/paginator.module';
 import { ChipModule } from 'src/app/shared/components/chip/chip.module';
+import { ApiClientDetailsModule } from './api-client-details/api-client-details.module';
 
 @NgModule({
   declarations: [ApiClientComponent],
@@ -27,6 +28,7 @@ import { ChipModule } from 'src/app/shared/components/chip/chip.module';
     AppMaterialModule,
     PaginatorModule,
     ChipModule,
+    ApiClientDetailsModule
   ],
 })
 export class ApiClientModule {}

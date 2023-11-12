@@ -105,6 +105,10 @@ export class ApiClientComponent implements OnInit, OnDestroy {
     return status ? 'active' : 'inactive';
   }
 
+  public openClientDetails(clientId) {
+    this.router.navigate(['api-clients', clientId]);
+  }
+
   private getApiTotalCount(): Observable<Params> {
     const queryParams$ = this.route.queryParams;
     return this.store.select(getApiClientCount).pipe(

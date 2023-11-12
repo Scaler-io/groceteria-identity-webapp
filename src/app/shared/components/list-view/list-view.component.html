@@ -1,0 +1,6 @@
+<div *ngFor="let item of list; let i = index" class="rounded-md  bg-slate-50 flex mt-3">
+    <div class="w-5 bg-primaryGreen rounded-tl-md rounded-bl-md flex items-center justify-center">
+        <span class="text-white text-sm">{{ i + 1  }}</span>
+    </div>
+    <div class="p-2">{{ item }}</div>
+</div>
