@@ -15,5 +15,9 @@ export const environment = {
       useRefreshToken: true,
       logLevel: LogLevel.Error,
     },
+    identityApiConfig: {
+      identityManagerApiUrl: 'https://localhost:5010/identity',
+      subscriptionKey: '73595fa8955e4d13bca129f4f84b0a46',
+    },
   },
 };

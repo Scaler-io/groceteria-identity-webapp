@@ -1,0 +1,61 @@
+<div class="overflow-x-auto overflow-y-hidden rounded-lg flex flex-col items-center justify-between min-h-[450px]">
+  <table *ngIf="isApiDataLoaded" cdk-table [dataSource]="apiClients" class="min-w-full divide-y shadow-sm border divide-gray-200 dark:divide-gray-700">
+    <ng-container cdkColumnDef="clientName">
+      <th cdk-header-cell *cdkHeaderCellDef>Client name</th>
+      <td cdk-cell *cdkCellDef="let element">{{ element.clientName | camelCaseSpacer }}</td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="clientId">
+      <th cdk-header-cell *cdkHeaderCellDef>Client Id</th>
+      <td cdk-cell *cdkCellDef="let element">{{ element.clientId }}</td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="accessTokenLifetime">
+      <th cdk-header-cell *cdkHeaderCellDef>Token lifetime</th>
+      <td cdk-cell *cdkCellDef="let element">
+        {{ element.accessTokenLifetime | formatTime }}
+      </td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="enabled">
+      <th cdk-header-cell *cdkHeaderCellDef>Status</th>
+      <td cdk-cell *cdkCellDef="let element">
+        <groceteria-chip [color]="element.enabled ? 'green':'red'">{{ apiStatusString(element.enabled) }}</groceteria-chip>
+      </td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="created">
+      <th cdk-header-cell *cdkHeaderCellDef>Created</th>
+      <td cdk-cell *cdkCellDef="let element">{{ element.created | formatDate }}</td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="action">
+      <th cdk-header-cell *cdkHeaderCellDef>Action</th>
+      <td cdk-cell *cdkCellDef="let element">
+        <button matRipple class="material-symbols-outlined rounded-full text-slate-500">more_horiz</button>
+      </td>
+    </ng-container>
+
+    <tr
+      cdk-header-row
+      *cdkHeaderRowDef="displayedColumns"
+      class=""
+    ></tr>
+    <tr
+      cdk-row
+      *cdkRowDef="let row; columns: displayedColumns"
+      class=""
+    ></tr>
+  </table>
+
+  <groceteria-paginator
+    *ngIf="isApiDataLoaded"
+    [paginationData]="paginationMetaData"
+    [totalItems]="totalItems"
+  ></groceteria-paginator>
+
+  <mat-spinner
+    *ngIf="!isApiDataLoaded"
+    diameter="30"
+  ></mat-spinner>
+</div>
